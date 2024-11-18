@@ -2,19 +2,20 @@
 
 // eslint-disable-next-line react/prop-types
 const AdventureCard = ({singleData}) => {
+    // eslint-disable-next-line react/prop-types
     const { title, image, ecoFriendlyFeatures } = singleData
     console.log(singleData);
     return (
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card bg-base-100 shadow-xl rounded-lg">
             <figure>
                 <img
                     src={image}
-                    className="md:h-32 lg:h-40 w-full"
+                    className="md:h-52 lg:h-40 xl:h-52 w-full"
                     alt={title} />
             </figure>
             <div className="card-body justify-between text-pretty">
                 <h2 className="card-title">{title}</h2>
-                <div>
+                <div className="">
                     <p className="font-semibold">Features</p>
                     {
                         // eslint-disable-next-line react/prop-types
@@ -22,7 +23,7 @@ const AdventureCard = ({singleData}) => {
                     }
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn  text-white bg-optional border-none hover:bg-Tertiary">Explore Now</button>
+                    <button className="btn  text-white bg-Tertiary border-none hover:bg-optional">Explore Now</button>
                 </div>
             </div>
         </div>
