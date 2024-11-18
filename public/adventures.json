@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "title": "Himalayan Mountain Trek",
+    "image": "https://www.himalayan-treks.com/wp-content/uploads/2019/01/16002786_10154948764216098_7989716405104998514_n-ISLAND-PEAK-Cropped.jpg",
+    "category": "Mountain Treks",
+    "shortDescription": "A breathtaking trek through the Himalayan mountain range, offering spectacular views and serene landscapes.",
+    "cost": 450,
+    "bookingAvailability": "Available Year-Round",
+    "location": "Nepal",
+    "duration": "7 Days",
+    "adventureLevel": "Intermediate",
+    "includedItems": ["Guide", "Meals", "Camping Equipment", "First Aid Kit"],
+    "ecoFriendlyFeatures": [
+      "Reusable Water Bottles",
+      "Minimal Footprint Trails"
+    ],
+    "maxGroupSize": 15,
+    "specialInstructions": [
+      "Pack light",
+      "Acclimatize before the trek",
+      "Wear sturdy hiking boots"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Great Barrier Reef Dive",
+    "image": "https://img.redbull.com/images/c_limit,w_1500,h_1000/f_auto,q_auto/redbullcom/2018/09/17/5595aa2e-863a-4243-ad43-87437f688e78/scuba-diving",
+    "category": "Ocean Dives",
+    "shortDescription": "Explore the stunning underwater world of the Great Barrier Reef with certified guides.",
+    "cost": 300,
+    "bookingAvailability": "March to November",
+    "location": "Australia",
+    "duration": "2 Days",
+    "adventureLevel": "Advanced",
+    "includedItems": [
+      "Dive Gear",
+      "Certified Dive Instructor",
+      "Underwater Photography"
+    ],
+    "ecoFriendlyFeatures": [
+      "Reef-Safe Sunscreen",
+      "Marine Life Preservation Briefings"
+    ],
+    "maxGroupSize": 10,
+    "specialInstructions": [
+      "Carry certification card",
+      "Avoid touching marine life",
+      "Stay hydrated"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Serengeti Wildlife Safari",
+    "image": "https://www.maasaimarakenyapark.com/wp-content/uploads/2023/11/Webp.net-compress-image-54-750x450.jpg",
+    "category": "Wildlife Safaris",
+    "shortDescription": "Experience the magic of the Serengeti, spotting lions, elephants, and other iconic wildlife.",
+    "cost": 800,
+    "bookingAvailability": "June to October",
+    "location": "Tanzania",
+    "duration": "5 Days",
+    "adventureLevel": "Beginner",
+    "includedItems": ["Safari Jeep", "Professional Guide", "Binoculars"],
+    "ecoFriendlyFeatures": ["Solar-Powered Lodges", "Plastic-Free Tours"],
+    "maxGroupSize": 20,
+    "specialInstructions": [
+      "Wear neutral colors",
+      "Carry a camera",
+      "Use eco-friendly toiletries"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Amazon Forest Expedition",
+    "image": "https://media.istockphoto.com/id/174640230/photo/iguazu-falls-and-rainforest.jpg?s=612x612&w=0&k=20&c=F3VQ3B5TyWV4zUEI2lFGXOUMYg7cHW7WpMmQgLDJ4h0=",
+    "category": "Forest Expeditions",
+    "shortDescription": "Journey through the dense Amazon rainforest, uncovering its diverse flora and fauna.",
+    "cost": 600,
+    "bookingAvailability": "May to October",
+    "location": "Brazil",
+    "duration": "6 Days",
+    "adventureLevel": "Advanced",
+    "includedItems": ["Guide", "Safety Equipment", "Meals"],
+    "ecoFriendlyFeatures": [
+      "Bio-Degradable Trash Bags",
+      "Educational Conservation Talks"
+    ],
+    "maxGroupSize": 12,
+    "specialInstructions": [
+      "Pack insect repellent",
+      "Stay hydrated",
+      "Respect wildlife"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Coastal Camping Retreat",
+    "image": "https://www.travelandleisure.com/thmb/w3C41Tz0TQZCwY15dIsGuuF-wV8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/lake-wenatchee-state-park_HERO_CAMPWA0922-09e49c99f7fd4a3b9238bdfd4475928b.jpg",
+    "category": "Camping Retreats",
+    "shortDescription": "Relax by the beach with this tranquil coastal camping adventure.",
+    "cost": 200,
+    "bookingAvailability": "Available Year-Round",
+    "location": "California, USA",
+    "duration": "3 Days",
+    "adventureLevel": "Beginner",
+    "includedItems": ["Tents", "Camping Gear", "Campfire Meals"],
+    "ecoFriendlyFeatures": ["Reusable Utensils", "Beach Cleanup Activities"],
+    "maxGroupSize": 10,
+    "specialInstructions": [
+      "Bring warm clothes",
+      "Avoid single-use plastics",
+      "Respect quiet hours"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Ganges River Adventure",
+    "image": "https://cdn.passporthealthusa.com/wp-content/uploads/2023/12/Ganges_River.jpg?x81255",
+    "category": "River Adventures",
+    "shortDescription": "Experience the thrill of rafting through the sacred Ganges river.",
+    "cost": 250,
+    "bookingAvailability": "September to April",
+    "location": "Rishikesh, India",
+    "duration": "2 Days",
+    "adventureLevel": "Intermediate",
+    "includedItems": ["Rafting Gear", "Safety Kit", "Professional Guide"],
+    "ecoFriendlyFeatures": ["Leave No Trace Policy", "Eco-Friendly Rafts"],
+    "maxGroupSize": 8,
+    "specialInstructions": [
+      "Wear quick-dry clothing",
+      "Follow safety instructions",
+      "Avoid carrying valuables"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Sahara Desert Exploration",
+    "image": "https://moroccanjourneys.com/wp-content/uploads/camel-trek-in-sahara.jpg.webp",
+    "category": "Desert Exploration",
+    "shortDescription": "Traverse the golden sands of the Sahara with expert guides.",
+    "cost": 500,
+    "bookingAvailability": "October to March",
+    "location": "Morocco",
+    "duration": "4 Days",
+    "adventureLevel": "Intermediate",
+    "includedItems": ["Camel Ride", "Meals", "Tent Accommodation"],
+    "ecoFriendlyFeatures": ["Solar-Powered Camps", "Waste Recycling"],
+    "maxGroupSize": 10,
+    "specialInstructions": [
+      "Bring a scarf",
+      "Apply sunscreen frequently",
+      "Stay hydrated"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Mangrove Forest Kayak Expedition",
+    "image": "https://tripjive.com/wp-content/uploads/2024/01/Kayaking-and-exploring-the-mangrove-forests-of-Koh-Rong-1-1024x585.jpg",
+    "category": "Mangrove Forest Expeditions",
+    "shortDescription": "Paddle through the serene mangrove forests and observe their rich biodiversity.",
+    "cost": 180,
+    "bookingAvailability": "November to April",
+    "location": "Philippines",
+    "duration": "1 Day",
+    "adventureLevel": "Beginner",
+    "includedItems": ["Kayak", "Guide", "Life Jacket"],
+    "ecoFriendlyFeatures": [
+      "Non-Intrusive Tours",
+      "Support for Local Conservation"
+    ],
+    "maxGroupSize": 6,
+    "specialInstructions": [
+      "Wear a hat",
+      "Avoid loud noises",
+      "Respect local customs"
+    ]
+  }
+]
