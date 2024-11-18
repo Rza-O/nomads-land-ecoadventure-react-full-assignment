@@ -35,7 +35,7 @@ const Navbar = () => {
                 <div className='flex flex-col items-center'>
                     <Link>
                     {/* <img className='w-16 rounded-xl' src={logo} alt="" /> */}
-                    <h2 className='md:text-2xl font-bold '>Nomad's Land</h2>
+                    <h2 className='md:text-2xl font-bold '>Nomad&apos;s Land</h2>
                     </Link>
                 </div>
             </div>

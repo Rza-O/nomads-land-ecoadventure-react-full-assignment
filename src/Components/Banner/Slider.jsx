@@ -1,10 +1,11 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 
+// eslint-disable-next-line react/prop-types
 const Slider = ({slides}) => {
-    console.log(slides);
     return (
         <Swiper
             spaceBetween={2}

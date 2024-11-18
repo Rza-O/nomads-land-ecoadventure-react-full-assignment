@@ -1,4 +1,3 @@
-import React from 'react';
 import Slider from './Slider';
 import slides from '../../../public/adventures.json'
 
