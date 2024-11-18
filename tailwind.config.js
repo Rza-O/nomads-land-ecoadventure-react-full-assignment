@@ -7,9 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#7ac6b6',
-        'secondary': '#dadad6',
-        'optional': '#093333'
+        'primary': '#FFE6E6',
+        'secondary': '#E1AFD1',
+        'optional': '#AD88C6',
+        'Tertiary': '#7469B6'
       },
       fontFamily: {
         funnel: "Funnel Display",
