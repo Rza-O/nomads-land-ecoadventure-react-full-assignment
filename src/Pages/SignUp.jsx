@@ -6,7 +6,7 @@ import { AuthContext } from "../Context/AuthProvider";
 
 
 const SignUp = () => {
-    const { handleSignUp, handleGoogleLogin } = useContext(AuthContext);
+    const { handleSignUp, handleGoogleLogin, updateUserProfile, setUser } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
@@ -36,8 +36,19 @@ const SignUp = () => {
             return
         }
 
-        handleSignUp(email, password);
-        navigate('/');
+        handleSignUp(email, password)
+            .then(result => {
+                const user = result.user;
+                setUser(user);
+                updateUserProfile({ displayName: name, photoURL: image })
+                    .then(() => {
+                        navigate('/');
+                    })
+                    .catch(err => console.log(err))
+            })
+            .catch(((error) => {
+                console.log(error.code, error.message);
+            }))
     }
 
     return (

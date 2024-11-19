@@ -4,6 +4,7 @@ import { AuthContext } from '../Context/AuthProvider';
 import { signOut } from 'firebase/auth';
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    // console.log(user.photoURL);
     const navigate = useNavigate();
     const handleLogOut = () => {
         logOut();
@@ -60,8 +61,9 @@ const Navbar = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img
-                                    alt="Tailwind CSS Navbar component"
-                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                    alt={user.displayName}
+                                    title={user.displayName}
+                                    src={user.photoURL} />
                             </div>
                         </div>
                         <ul
@@ -73,7 +75,6 @@ const Navbar = () => {
                                     <span className="badge">New</span>
                                 </a>
                             </li>
-                            <li><a>Settings</a></li>
                             <li><Link onClick={handleLogOut}>Logout</Link></li>
                         </ul>
                     </div>
