@@ -5,7 +5,7 @@ const AdventureDetails = () => {
     const { id, title, image, category, shortDescription, cost, bookingAvailability, location, duration, adventureLevel, includedItems, ecoFriendlyFeatures, maxGroupSize, specialInstructions } = useLoaderData();
     console.log(title);
     return (
-        <div>
+        <div className="">
             <div
                 className="hero min-h-screen"
                 style={{
@@ -25,6 +25,21 @@ const AdventureDetails = () => {
             <div>
                 <h2 className="text-4xl mt-4 text-center text-Tertiary">IMPORTANT DETAILS ABOUT THE TRIP</h2>
             </div>
+            <div className="card w-9/12 mx-auto bg-secondary/20  shadow-xl my-7 text-center">
+                <div className="card-body">
+                    <h2 className="card-title justify-center text-Tertiary font-extrabold">{title}</h2>
+                    <p><span className="text-Tertiary font-extrabold">Location:</span> {location}</p>
+                    <p><span className="text-Tertiary font-extrabold">Duration:</span> {duration}</p>
+                    <p><span className="text-Tertiary font-extrabold">Category:</span> {category}</p>
+                    <p><span className="text-Tertiary font-extrabold">Availability:</span> {bookingAvailability}</p>
+                    <p><span className="text-Tertiary font-extrabold">Group Size:</span> {maxGroupSize} person/trip</p>
+                    <p><span className="text-Tertiary font-extrabold">Adventure Level:</span> {adventureLevel}</p>
+                    <p><span className="text-Tertiary font-extrabold">Cost:</span> {cost}$</p>
+                    {/* <div className="card-actions justify-end">
+                        <button className="btn btn-primary">Buy Now</button>
+                    </div> */}
+                </div>
+            </div>
         </div>
     );
 };
@@ -34,8 +49,8 @@ export default AdventureDetails;
 
 // {
 //     "id": 1,
-//         "title": "Himalayan Mountain Trek",
-//             "image": "https://www.himalayan-treks.com/wp-content/uploads/2019/01/16002786_10154948764216098_7989716405104998514_n-ISLAND-PEAK-Cropped.jpg",
+//         "title": "Himalayan Mountain Trek",   done
+//             "image": "https://www.himalayan-treks.com/wp-content/uploads/2019/01/16002786_10154948764216098_7989716405104998514_n-ISLAND-PEAK-Cropped.jpg", done
 //                 "category": "Mountain Treks",
 //                     "shortDescription": "A breathtaking trek through the Himalayan mountain range, offering spectacular views and serene landscapes.",
 //                         "cost": 450,
