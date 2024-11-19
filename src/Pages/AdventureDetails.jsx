@@ -1,4 +1,6 @@
 import { useLoaderData } from "react-router-dom";
+import travelImg from '../assets/travel002.svg';
+import { CiLocationOn } from "react-icons/ci";
 
 const AdventureDetails = () => {
     // eslint-disable-next-line no-unused-vars
@@ -20,24 +22,40 @@ const AdventureDetails = () => {
                         </p>
                         <button className="btn bg-Tertiary border-none hover:bg-optional text-white">Talk with expert</button>
                     </div>
+
                 </div>
             </div>
             <div>
-                <h2 className="text-4xl mt-4 text-center text-Tertiary">IMPORTANT DETAILS ABOUT THE TRIP</h2>
+                <h2 className="text-4xl my-6 text-center text-Tertiary">IMPORTANT DETAILS ABOUT THE TRIP</h2>
             </div>
-            <div className="card w-9/12 mx-auto bg-secondary/20  shadow-xl my-7 text-center">
-                <div className="card-body">
-                    <h2 className="card-title justify-center text-Tertiary font-extrabold">{title}</h2>
-                    <p><span className="text-Tertiary font-extrabold">Location:</span> {location}</p>
-                    <p><span className="text-Tertiary font-extrabold">Duration:</span> {duration}</p>
-                    <p><span className="text-Tertiary font-extrabold">Category:</span> {category}</p>
-                    <p><span className="text-Tertiary font-extrabold">Availability:</span> {bookingAvailability}</p>
-                    <p><span className="text-Tertiary font-extrabold">Group Size:</span> {maxGroupSize} person/trip</p>
-                    <p><span className="text-Tertiary font-extrabold">Adventure Level:</span> {adventureLevel}</p>
-                    <p><span className="text-Tertiary font-extrabold">Cost:</span> {cost}$</p>
-                    {/* <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
-                    </div> */}
+            <div className="w-11/12 mx-auto md:flex space-x-3">
+                <div>
+                    <img src={travelImg} alt="" />
+                </div>
+                <div className="card lg:w-1/2">
+                    <div className="card-body">
+                        {/* <h2 className="card-title text-3xl justify-center text-Tertiary font-extrabold">{title}</h2> */}
+                        <p className="text-xl">Location: <span className="text-Tertiary font-bold">{location}</span> </p>
+                        <p className="text-xl">Duration: <span className="text-Tertiary font-bold">{duration}</span></p>
+                        <p className="text-xl">Cost: <span className="text-Tertiary font-bold">{cost}$</span> </p>
+                        <p className="text-xl">Category: <span className="text-Tertiary font-bold">{category}</span></p>
+                        <p className="text-xl">Availability: <span className="text-Tertiary font-bold">{bookingAvailability}</span></p>
+                        <p className="text-xl">Group Size: <span className="text-Tertiary font-bold">{maxGroupSize}</span>  person/trip</p>
+                        <p className="text-xl">Adventure Level: <span className="text-Tertiary font-bold">{adventureLevel}</span> </p>
+                        <p className="text-xl"> Items included: 
+                            {
+                                includedItems.map((item, idx) => <li className="font-bold" key={idx}><span className="text-Tertiary">{item}</span></li>)
+                            }
+                        </p>
+                        <p className="text-xl"> Special Instructions: 
+                            {
+                                specialInstructions.map((item, idx) => <li className="font-bold" key={idx}><span className="text-Tertiary">{item}</span></li>)
+                            }
+                        </p>
+                        {/* <div className="card-actions justify-end">
+                            <button className="btn btn-primary">Buy Now</button>
+                        </div> */}
+                    </div>
                 </div>
             </div>
         </div>
