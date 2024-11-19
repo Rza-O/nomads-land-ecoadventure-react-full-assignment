@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 
 
 // eslint-disable-next-line react/prop-types
 const AdventureCard = ({singleData}) => {
     // eslint-disable-next-line react/prop-types
-    const { title, image, ecoFriendlyFeatures } = singleData
+    const { title, image, ecoFriendlyFeatures, id } = singleData;
     console.log(singleData);
     return (
         <div className="card bg-base-100 shadow-xl rounded-lg">
@@ -23,7 +24,7 @@ const AdventureCard = ({singleData}) => {
                     }
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn  text-white bg-Tertiary border-none hover:bg-optional">Explore Now</button>
+                    <Link to={`/details/${id}`}><button className="btn  text-white bg-Tertiary border-none hover:bg-optional">Explore Now</button></Link>
                 </div>
             </div>
         </div>

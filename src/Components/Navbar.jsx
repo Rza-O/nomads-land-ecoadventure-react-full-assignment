@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
-import { signOut } from 'firebase/auth';
+
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     // console.log(user.photoURL);
