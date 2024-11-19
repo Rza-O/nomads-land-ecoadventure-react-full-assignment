@@ -1,6 +1,5 @@
 import { useLoaderData } from "react-router-dom";
 import travelImg from '../assets/travel002.svg';
-import { CiLocationOn } from "react-icons/ci";
 
 const AdventureDetails = () => {
     // eslint-disable-next-line no-unused-vars
