@@ -4,9 +4,12 @@ import welcomeImg from '../assets/welcom.svg'
 const Login = () => {
     return (
             <div className='md:flex w-4/5 mx-auto my-6 md:p-8'>
+            <div className='hidden lg:block lg:w-1/2 p-6 bg-optional/20'>
+                <img src={welcomeImg} alt="" />
+            </div>
             <div className='w-full lg:w-1/2 p-6'>
-                <div className='text-center'>
-                    <h2 className='text-3xl font-bold'>Welcome Back!</h2>
+                <div className='text-center space-y-2'>
+                    <h2 className='text-3xl font-bold text-Tertiary'>Welcome Back!</h2>
                     <p className='text-sm font-light'>Please Enter your details to login</p>
                 </div>
                     <form className="card-body">
@@ -31,9 +34,7 @@ const Login = () => {
                     </form>
                     <p className='text-center'>Don&apos;t have an account? <Link to='/register'><span className='text-Tertiary hover:text-optional'>Sign Up</span></Link></p>
                 </div>
-            <div className='hidden lg:block lg:w-1/2 p-6 bg-optional/20'>
-                <img src={welcomeImg} alt="" />
-            </div>
+            
             </div>
     );
 };
