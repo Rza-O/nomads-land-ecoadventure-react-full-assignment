@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import signup from '../assets/signup.svg'
+import { FaGoogle } from "react-icons/fa";
 
 
 const SignUp = () => {
@@ -43,8 +44,14 @@ const SignUp = () => {
                     </div>
                 </form>
                 <p className='text-center'>Already have an account? <Link to='/login'><span className='text-Tertiary hover:text-optional'>Login</span></Link></p>
+            <div className="divider">OR</div>
+            <p className='text-center font-semibold'>Sign in using</p>
+            <div className=' flex flex-col justify-center items-center mt-3'>
+                <FaGoogle className='text-3xl bg-Tertiary text-white rounded-full p-2 hover:bg-optional' />
+                <p className='text-xs'>Google</p>
             </div>
-            <div className='hidden lg:block lg:w-1/2 p-6 bg-optional/20'>
+            </div>
+            <div className='hidden lg:flex  lg:w-1/2 p-6 bg-optional/20'>
                 <img src={signup} alt="" />
             </div>
         </div>
