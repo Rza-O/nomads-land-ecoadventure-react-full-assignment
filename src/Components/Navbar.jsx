@@ -1,5 +1,15 @@
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthProvider';
+import { signOut } from 'firebase/auth';
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const handleLogOut = () => {
+        logOut();
+        navigate('/');
+    } 
+
     const links = <>
         <li><a>Home</a></li>
         <li><a>Profile</a></li>
@@ -34,8 +44,8 @@ const Navbar = () => {
                 {/* <a className="btn btn-ghost text-xl">daisyUI</a> */}
                 <div className='flex flex-col items-center'>
                     <Link>
-                    {/* <img className='w-16 rounded-xl' src={logo} alt="" /> */}
-                    <h2 className='md:text-2xl font-bold '>Nomad&apos;s Land</h2>
+                        {/* <img className='w-16 rounded-xl' src={logo} alt="" /> */}
+                        <h2 className='md:text-2xl font-bold '>Nomad&apos;s Land</h2>
                     </Link>
                 </div>
             </div>
@@ -45,7 +55,32 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-            <Link to='/login'><button className='btn bg-primary text-Tertiary'>Login</button></Link>
+                {
+                    user ? <div className="dropdown dropdown-end">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img
+                                    alt="Tailwind CSS Navbar component"
+                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                            </div>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content text-Tertiary bg-primary rounded-box z-[10] mt-3 w-52 p-2 shadow">
+                            <li>
+                                <a className="justify-between">
+                                    Profile
+                                    <span className="badge">New</span>
+                                </a>
+                            </li>
+                            <li><a>Settings</a></li>
+                            <li><Link onClick={handleLogOut}>Logout</Link></li>
+                        </ul>
+                    </div>
+                    :
+                <Link to='/login'><button className='btn bg-primary text-Tertiary'>Login</button></Link>
+                }
+
             </div>
         </div>
     );
