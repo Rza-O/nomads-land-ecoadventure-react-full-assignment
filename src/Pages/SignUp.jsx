@@ -1,12 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import signup from '../assets/signup.svg'
 import { FaGoogle } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 
 
 const SignUp = () => {
     const { handleSignUp, handleGoogleLogin } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+
+    const handleSocialLogin = () => {
+        handleGoogleLogin();
+        navigate('/');
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,8 +22,22 @@ const SignUp = () => {
         const email = form.get('email');
         const image = form.get('photo');
         const password = form.get('password')
-        console.log('name:',name, 'email:', email, 'image:', image, 'password:', password);
+        setError('');
+
+        if (password.length < 6) {
+            setError('Password must be six character long!')
+        }
+        if (!/[a-z]/.test(password)) {
+            setError('Password must contain one letter!')
+            return
+        }
+        if (!/[A-Z]/.test(password)) {
+            setError('Password must contain one capital letter!')
+            return
+        }
+
         handleSignUp(email, password);
+        navigate('/');
     }
 
     return (
@@ -54,17 +75,20 @@ const SignUp = () => {
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
                     </div>
+                    {
+                        error && <p className='text-red-500 text-sm'>{error}</p>
+                    }
                     <div className="form-control mt-6">
                         <button type="submit" className="btn bg-Tertiary border-none text-white hover:bg-optional">Sign Up</button>
                     </div>
                 </form>
                 <p className='text-center'>Already have an account? <Link to='/login'><span className='text-Tertiary hover:text-optional'>Login</span></Link></p>
-            <div className="divider">OR</div>
-            <p className='text-center font-semibold'>Sign in using</p>
-            <div className=' flex flex-col justify-center items-center mt-3'>
-                <FaGoogle className='text-3xl bg-Tertiary text-white rounded-full p-2 hover:bg-optional' />
-                <p className='text-xs'>Google</p>
-            </div>
+                <div className="divider">OR</div>
+                <p className='text-center font-semibold'>Sign in using</p>
+                <div className=' flex flex-col justify-center items-center mt-3'>
+                    <FaGoogle onClick={handleSocialLogin} className='text-3xl bg-Tertiary text-white rounded-full p-2 hover:bg-optional cursor-pointer' />
+                    <p className='text-xs'>Google</p>
+                </div>
             </div>
             <div className='hidden lg:flex  lg:w-1/2 p-6 bg-optional/20'>
                 <img src={signup} alt="" />
