@@ -22,7 +22,7 @@ const Profile = () => {
                     
                     <p>Email: {email}</p>
                     <div className="card-actions">
-                        <Link to='/profile/update'><button className="btn btn-primary">Update profile</button></Link>
+                        <Link to='/profile/update'><button className="btn bg-Tertiary hover:bg-optional text-white">Update profile</button></Link>
                     </div>
                 </div>
             </div>
