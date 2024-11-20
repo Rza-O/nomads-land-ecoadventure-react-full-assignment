@@ -9,7 +9,7 @@ const Profile = () => {
     console.log(displayName, email, photoURL);
     return (
         <div className=" my-7 flex flex-col justify-center items-center gap-5">
-            <h1 className="text-4xl text-center">Welcome {displayName}!</h1>
+            <h1 className="text-4xl text-center">Welcome <span className="text-Tertiary">{displayName}</span>!</h1>
             <div className="card bg-base-100 w-96 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img

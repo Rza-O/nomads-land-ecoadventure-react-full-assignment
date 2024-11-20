@@ -1,15 +1,24 @@
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const UpdateProfile = () => {
     const { user, updateUserProfile } = useContext(AuthContext);
     const { displayName, photoURL } = user
-    console.log(user);
+    const navigate = useNavigate();
 
-    const handleUpdateBtn = () => {
-        console.log('hello');
+    const handleUpdateBtn = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const photo = e.target.image.value;
+        console.log(name, photo);
+
+        updateUserProfile({ displayName: name, photoURL: photo })
+            .then(() => {
+                navigate('/profile');
+            })
+            .catch(err => console.log(err))
     }
 
     return (
@@ -23,18 +32,19 @@ const UpdateProfile = () => {
                         className="rounded-full" />
                 </figure>
                 <div className="card-body items-center text-center">
-
-                    <label className="input input-bordered flex items-center gap-2">
-                        Name
-                        <input type="text" className="grow" placeholder={displayName} />
-                    </label>
-                    <label className="input input-bordered flex items-center gap-2">
-                        Photo
-                        <input type="text" className="grow" placeholder='photo url' />
-                    </label>
-                    <div className="card-actions">
-                        <Link to='/profile/update'><button onClick={handleUpdateBtn} className="btn bg-Tertiary hover:bg-optional text-white">Update</button></Link>
-                    </div>
+                    <form onSubmit={handleUpdateBtn} className="space-y-3">
+                        <label className="input input-bordered flex items-center gap-2">
+                            Name
+                            <input name="name" type="text" className="grow" placeholder={displayName} />
+                        </label>
+                        <label className="input input-bordered flex items-center gap-2">
+                            Photo
+                            <input type="text" name="image" className="grow" placeholder='photo url' />
+                        </label>
+                        <div className="card-actions justify-center">
+                            <button type="submit" className="btn bg-Tertiary hover:bg-optional text-white">Update</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
