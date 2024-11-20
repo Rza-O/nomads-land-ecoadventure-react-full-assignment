@@ -12,8 +12,8 @@ const Navbar = () => {
     } 
 
     const links = <>
-        <li><NavLink className='' to='/'>Home</NavLink></li>
-        <li><NavLink to='/about'>About</NavLink></li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/profile'>Profile</NavLink></li>
         <li><NavLink to='/contact'>Contact</NavLink></li>
     </>
 
@@ -69,12 +69,6 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content text-Tertiary bg-primary rounded-box z-[10] mt-3 w-52 p-2 shadow">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
                             <li><Link onClick={handleLogOut}>Logout</Link></li>
                         </ul>
                     </div>

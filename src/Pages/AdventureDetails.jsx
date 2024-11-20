@@ -1,4 +1,4 @@
-import { useLoaderData, useLocation } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import travelImg from '../assets/travel002.svg';
 import { useState } from "react";
 import { format, isWithinInterval, parseISO } from "date-fns";
@@ -7,7 +7,6 @@ const AdventureDetails = () => {
     // eslint-disable-next-line no-unused-vars
     const { id, title, image, category, shortDescription, cost, bookingAvailability, location, duration, adventureLevel, includedItems, ecoFriendlyFeatures, maxGroupSize, specialInstructions } = useLoaderData();
     
-    const locationHook = useLocation()
 
     const [modal, setModal] = useState(false);
     
