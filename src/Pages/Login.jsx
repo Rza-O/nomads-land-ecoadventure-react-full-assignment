@@ -5,7 +5,7 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../Context/AuthProvider';
 
 const Login = () => {
-    const { handleGoogleLogin, handleLogin, setUser } = useContext(AuthContext);
+    const { handleGoogleLogin, handleLogin, setUser, setEmail } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const [error, setError] = useState({});
@@ -17,19 +17,23 @@ const Login = () => {
         const email = form.get('email');
         const password = form.get('password')
         setError('')
+        // setEmail(email);
         console.log('email:', email, 'password:', password);
         handleLogin(email, password)
             .then(res => {
                 const user = res.user;
                 setUser(user);
-                navigate(location?.state? location.state: '/')
+                navigate(location?.state ? location.state : '/')
             })
-            .catch((err)=> {
+            .catch((err) => {
                 console.log(err);
-                setError({...error, login: err.code})
+                setError({ ...error, login: err.code })
             })
     }
 
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    }
 
     return (
         <div className='md:flex w-4/5 mx-auto my-6 md:p-8'>
@@ -46,7 +50,7 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input name='email' type="email" placeholder="email" className="input input-bordered" required />
+                        <input name='email' type="email" onChange={handleEmailChange} placeholder="email" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">

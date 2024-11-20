@@ -14,7 +14,7 @@ const Profile = () => {
                 <figure className="px-10 pt-10">
                     <img
                         src={photoURL}
-                        alt="Shoes"
+                        alt={displayName}
                         className="rounded-full" />
                 </figure>
                 <div className="card-body items-center text-center">

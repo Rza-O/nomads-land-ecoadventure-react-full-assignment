@@ -1,6 +1,11 @@
+import { useContext } from 'react';
 import forgotImg from '../assets/forgot-password.svg';
+import { AuthContext } from '../Context/AuthProvider';
+
 
 const ForgotPassword = () => {
+    const {email} = useContext(AuthContext);
+    console.log(email);
     return (
         <div className='md:flex w-4/5 mx-auto my-6 md:p-8'>
             <div className='hidden lg:flex lg:w-1/2 p-6 bg-optional/20 justify-center'>
@@ -16,18 +21,10 @@ const ForgotPassword = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input name='email' type="email" placeholder="email" className="input input-bordered" required />
-                    </div>
-                    {/* <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Password</span>
-                        </label>
-                        <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-                        
-                    </div> */}
-                    
+                        <input defaultValue={email} name='email' type="email" placeholder="email" className="input input-bordered" required />
+                    </div>                   
                     <div className="form-control mt-6">
-                        <button type='submit' className="btn bg-Tertiary border-none text-white hover:bg-optional">Send reset password link</button>
+                        <button type='submit' className="btn bg-Tertiary border-none text-white hover:bg-optional">Send Reset Link</button>
                     </div>
                 </form>
                 
