@@ -1,14 +1,20 @@
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 
 const Profile = () => {
+    useEffect(() => {
+        Aos.init();
+    }, []);
     const {user} = useContext(AuthContext);
     const { displayName, email, photoURL } = user
     console.log(displayName, email, photoURL);
     return (
-        <div className="2xl:h-[700px] 3xl my-7 flex flex-col justify-center items-center gap-5">
+        <div className="2xl:h-[700px] 3xl my-7 flex flex-col justify-center items-center gap-5" data-aos="zoom-in">
             <h1 className="text-2xl md:text-4xl text-center">Welcome <span className="text-Tertiary">{displayName}</span>!</h1>
             <div className="card bg-base-100 w-96 shadow-xl">
                 <figure className="px-10 pt-10">

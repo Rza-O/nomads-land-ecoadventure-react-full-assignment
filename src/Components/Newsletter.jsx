@@ -1,8 +1,15 @@
 import toast from "react-hot-toast";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 
 
 const Newsletter = () => {
+    useEffect(() => {
+        Aos.init();
+    }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = e.target.email.value
@@ -12,7 +19,7 @@ const Newsletter = () => {
 
 
     return (
-        <div className="w-3/4 py-6 px-4 md:px-0 mx-auto flex flex-col gap-6 items-center bg-primary/60 rounded-lg my-10">
+        <div className="w-3/4 py-6 px-4 md:px-0 mx-auto flex flex-col gap-6 items-center bg-primary/60 rounded-lg my-10" data-aos='fade-up'>
             <div className="text-center space-y-2">
                 <h2 className="font-semibold text-2xl">NEWS, INSPIRATION AND ADVENTURE</h2>
                 <p className="font-light">Sign up to the Nomad&apos;s newsletter</p>

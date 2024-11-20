@@ -3,8 +3,14 @@ import welcomeImg from '../assets/welcom.svg'
 import { FaGoogle } from "react-icons/fa";
 import { useContext, useState } from 'react';
 import { AuthContext } from '../Context/AuthProvider';
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 const Login = () => {
+    useEffect(() => {
+        Aos.init();
+    }, []);
     const { handleGoogleLogin, handleLogin, setUser, setEmail } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
@@ -44,10 +50,10 @@ const Login = () => {
 
     return (
         <div className='md:flex w-4/5 mx-auto my-6 md:p-8'>
-            <div className='hidden lg:flex lg:w-1/2 p-6 bg-optional/20 justify-center'>
+            <div className='hidden lg:flex lg:w-1/2 p-6 bg-optional/20 justify-center' data-aos='fade-right'>
                 <img src={welcomeImg} alt="" />
             </div>
-            <div className='w-full lg:w-1/2 p-6'>
+            <div className='w-full lg:w-1/2 p-6' data-aos="fade-left">
                 <div className='text-center space-y-2'>
                     <h2 className='text-3xl font-bold text-Tertiary'>Welcome Back!</h2>
                     <p className='text-sm font-light'>Please Enter your details to login</p>

@@ -3,9 +3,15 @@ import signup from '../assets/signup.svg'
 import { FaGoogle } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Context/AuthProvider";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 
 const SignUp = () => {
+    useEffect(() => {
+        Aos.init();
+    }, []);
     const { handleSignUp, handleGoogleLogin, updateUserProfile, setUser } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
@@ -55,8 +61,8 @@ const SignUp = () => {
 
     return (
         <div className='md:flex w-4/5 mx-auto my-6 md:p-8'>
-            <div className='w-full lg:w-1/2 p-6'>
-                <div className='text-center space-y-2'>
+            <div className='w-full lg:w-1/2 p-6' data-aos="fade-right">
+                <div className='text-center space-y-2' >
                     <h2 className='text-3xl font-bold text-Tertiary'>Become our member!</h2>
                     <p className='text-sm font-light'>Please Enter your details to signup</p>
                 </div>
@@ -103,7 +109,7 @@ const SignUp = () => {
                     <p className='text-xs'>Google</p>
                 </div>
             </div>
-            <div className='hidden lg:flex  lg:w-1/2 p-6 bg-optional/20'>
+            <div className='hidden lg:flex  lg:w-1/2 p-6 bg-optional/20' data-aos="fade-left">
                 <img src={signup} alt="" />
             </div>
         </div>
