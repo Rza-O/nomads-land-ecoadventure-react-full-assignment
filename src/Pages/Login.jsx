@@ -1,19 +1,33 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import welcomeImg from '../assets/welcom.svg'
 import { FaGoogle } from "react-icons/fa";
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../Context/AuthProvider';
 
 const Login = () => {
-    const { handleGoogleLogin, handleLogin } = useContext(AuthContext);
+    const { handleGoogleLogin, handleLogin, setUser } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [error, setError] = useState({});
+    console.log(location)
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
         const email = form.get('email');
         const password = form.get('password')
-        console.log('email:',email, 'password:', password);
-        handleLogin(email, password);
+        setError('')
+        console.log('email:', email, 'password:', password);
+        handleLogin(email, password)
+            .then(res => {
+                const user = res.user;
+                setUser(user);
+                navigate(location?.state? location.state: '/')
+            })
+            .catch((err)=> {
+                console.log(err);
+                setError({...error, login: err.code})
+            })
     }
 
 
@@ -43,6 +57,13 @@ const Login = () => {
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
                     </div>
+                    {
+                        error.login && (
+                            <label className="label text-sm text-red-600">
+                                {error.login}
+                            </label>
+                        )
+                    }
                     <div className="form-control mt-6">
                         <button type='submit' className="btn bg-Tertiary border-none text-white hover:bg-optional">Login</button>
                     </div>

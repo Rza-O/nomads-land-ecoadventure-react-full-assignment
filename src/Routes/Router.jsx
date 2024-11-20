@@ -4,11 +4,14 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import AdventureDetails from "../Pages/AdventureDetails";
+import PrivateRoute from "../Private/PrivateRoute";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -31,7 +34,7 @@ const router = createBrowserRouter([
                     const singleData = data.find(info => info.id == params.id);
                     return singleData;
                 },
-                element: <AdventureDetails></AdventureDetails>
+                element: <PrivateRoute><AdventureDetails></AdventureDetails></PrivateRoute>
             }
         ]
     }

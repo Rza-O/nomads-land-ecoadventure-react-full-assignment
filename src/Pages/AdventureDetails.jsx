@@ -1,10 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import travelImg from '../assets/travel002.svg';
 
 const AdventureDetails = () => {
     // eslint-disable-next-line no-unused-vars
     const { id, title, image, category, shortDescription, cost, bookingAvailability, location, duration, adventureLevel, includedItems, ecoFriendlyFeatures, maxGroupSize, specialInstructions } = useLoaderData();
-    console.log(title);
+    const locationHook = useLocation()
+    console.log(locationHook);
     return (
         <div className="">
             <div
@@ -27,12 +28,12 @@ const AdventureDetails = () => {
             <div>
                 <h2 className="text-4xl my-6 text-center text-Tertiary">IMPORTANT DETAILS ABOUT THE TRIP</h2>
             </div>
-            <div className="w-11/12 mx-auto md:flex space-x-3">
+            <div className="w-11/12 mx-auto md:flex xl:justify-between space-x-3">
                 <div>
                     <img src={travelImg} alt="" />
                 </div>
-                <div className="card lg:w-1/2">
-                    <div className="card-body">
+                <div className="card lg:w-1/2 ">
+                    <div className="card-body 2xl:text-center">
                         {/* <h2 className="card-title text-3xl justify-center text-Tertiary font-extrabold">{title}</h2> */}
                         <p className="text-xl">Location: <span className="text-Tertiary font-bold">{location}</span> </p>
                         <p className="text-xl">Duration: <span className="text-Tertiary font-bold">{duration}</span></p>

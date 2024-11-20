@@ -6,12 +6,14 @@ import Newsletter from "../Components/Newsletter";
 
 
 
+
 const Home = () => {
     const data = useLoaderData();
     return (
         <div className="">
             <Banner></Banner>
             <Adventures data={data}></Adventures>
+            
             <Newsletter></Newsletter>
             <Insurance></Insurance>
         </div>
