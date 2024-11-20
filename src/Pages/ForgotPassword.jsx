@@ -4,8 +4,15 @@ import { AuthContext } from '../Context/AuthProvider';
 
 
 const ForgotPassword = () => {
-    const {email} = useContext(AuthContext);
+    const { email, resetPassword } = useContext(AuthContext);
     console.log(email);
+    const handleReset = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        console.log(email);
+        resetPassword(email)
+            .then(window.open('https://mail.google.com/', '_blank'))
+    }
     return (
         <div className='md:flex w-4/5 mx-auto my-6 md:p-8'>
             <div className='hidden lg:flex lg:w-1/2 p-6 bg-optional/20 justify-center'>
@@ -16,7 +23,7 @@ const ForgotPassword = () => {
                     <h2 className='text-3xl font-bold text-Tertiary'>Forgot password?</h2>
                     {/* <p className='text-sm font-light'>Please Enter your details to login</p> */}
                 </div>
-                <form className="card-body">
+                <form onSubmit={handleReset} className="card-body">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
