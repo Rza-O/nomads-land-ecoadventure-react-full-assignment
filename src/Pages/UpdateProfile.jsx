@@ -22,7 +22,7 @@ const UpdateProfile = () => {
     }
 
     return (
-        <div className=" my-7 flex flex-col justify-center items-center gap-5">
+        <div className="2xl:h-[700px] my-7 flex flex-col justify-center items-center gap-5">
             <h1 className="text-4xl text-center text-Tertiary">Update your profile!</h1>
             <div className="card bg-base-100 w-96 shadow-xl">
                 <figure className="px-10 pt-10">

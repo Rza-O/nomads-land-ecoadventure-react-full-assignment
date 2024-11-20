@@ -11,8 +11,10 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const handleSocialLogin = () => {
-        handleGoogleLogin();
-        navigate('/');
+        handleGoogleLogin()
+            .then(() => {
+                navigate('/');
+            })
     }
 
     const handleSubmit = (e) => {

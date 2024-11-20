@@ -11,6 +11,13 @@ const Login = () => {
     const [error, setError] = useState({});
     console.log(location)
 
+    const handleSocialLogin = () => {
+        handleGoogleLogin()
+            .then(() => {
+                navigate(location?.state ? location.state : '/')
+            })
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
@@ -76,7 +83,7 @@ const Login = () => {
                 <div className="divider">OR</div>
                 <p className='text-center font-semibold'>Sign in using</p>
                 <div className=' flex flex-col justify-center items-center mt-3'>
-                    <FaGoogle onClick={handleGoogleLogin} className='text-3xl bg-Tertiary text-white rounded-full p-2 hover:bg-optional' />
+                    <FaGoogle onClick={handleSocialLogin} className='text-3xl bg-Tertiary text-white rounded-full p-2 hover:bg-optional' />
                     <p className='text-xs'>Google</p>
                 </div>
             </div>
