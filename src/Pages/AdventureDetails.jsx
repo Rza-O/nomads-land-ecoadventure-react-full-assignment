@@ -1,11 +1,30 @@
 import { useLoaderData, useLocation } from "react-router-dom";
 import travelImg from '../assets/travel002.svg';
+import { useState } from "react";
+import { format, isWithinInterval, parseISO } from "date-fns";
 
 const AdventureDetails = () => {
     // eslint-disable-next-line no-unused-vars
     const { id, title, image, category, shortDescription, cost, bookingAvailability, location, duration, adventureLevel, includedItems, ecoFriendlyFeatures, maxGroupSize, specialInstructions } = useLoaderData();
+    
     const locationHook = useLocation()
-    console.log(locationHook);
+
+    const [modal, setModal] = useState(false);
+    
+    const expertBtnHandler = () => {
+        const currentTime = new Date();
+        console.log(currentTime);
+        const start = parseISO(`${format(new Date(), 'yyyy-MM-dd')}T10:00:00`);
+        const end = parseISO(`${format(new Date(), 'yyyy-MM-dd')}T20:00:00`);
+        console.log(start, end);
+        if(isWithinInterval(currentTime, {start, end})){
+            window.open('https://meet.google.com', '_blank');
+        }
+        else{
+            setModal(true);
+        }
+    }
+
     return (
         <div className="">
             <div
@@ -20,7 +39,7 @@ const AdventureDetails = () => {
                         <p className="mb-5">
                             {shortDescription}
                         </p>
-                        <button className="btn bg-Tertiary border-none hover:bg-optional text-white">Talk with expert</button>
+                        <button onClick={expertBtnHandler} className="btn bg-Tertiary border-none hover:bg-optional text-white">Talk with expert</button>
                     </div>
 
                 </div>
@@ -58,33 +77,22 @@ const AdventureDetails = () => {
                     </div>
                 </div>
             </div>
+            {
+                modal && (
+                    <div className="modal modal-open ">
+                        <div className="modal-box bg-primary text-center space-y-3">
+                            <h3 className="text-xl font-bold">Consultation Time</h3>
+                            <p>Our consultation hours are between <span className="font-bold">10:00 AM</span> and <span className="font-bold">8:00 PM</span>. Please Visit during these hours!</p>
+                            <div className="modal-action justify-center">
+                                <button className="btn bg-Tertiary text-white hover:bg-optional" onClick={()=> setModal(false)}>Close</button>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
         </div>
     );
 };
 
 export default AdventureDetails;
 
-
-// {
-//     "id": 1,
-//         "title": "Himalayan Mountain Trek",   done
-//             "image": "https://www.himalayan-treks.com/wp-content/uploads/2019/01/16002786_10154948764216098_7989716405104998514_n-ISLAND-PEAK-Cropped.jpg", done
-//                 "category": "Mountain Treks",
-//                     "shortDescription": "A breathtaking trek through the Himalayan mountain range, offering spectacular views and serene landscapes.",
-//                         "cost": 450,
-//                             "bookingAvailability": "Available Year-Round",
-//                                 "location": "Nepal",
-//                                     "duration": "7 Days",
-//                                         "adventureLevel": "Intermediate",
-//                                             "includedItems": ["Guide", "Meals", "Camping Equipment", "First Aid Kit"],
-//                                                 "ecoFriendlyFeatures": [
-//                                                     "Reusable Water Bottles",
-//                                                     "Minimal Footprint Trails"
-//                                                 ],
-//                                                     "maxGroupSize": 15,
-//                                                         "specialInstructions": [
-//                                                             "Pack light",
-//                                                             "Acclimatize before the trek",
-//                                                             "Wear sturdy hiking boots"
-//                                                         ]
-// }
