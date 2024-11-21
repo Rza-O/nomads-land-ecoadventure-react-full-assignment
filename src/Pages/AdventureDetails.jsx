@@ -74,6 +74,11 @@ const AdventureDetails = () => {
                                 specialInstructions.map((item, idx) => <li className="font-bold" key={idx}><span className="text-Tertiary">{item}</span></li>)
                             }
                         </p>
+                        <p className="text-xl"> Eco Friendly Features: 
+                            {
+                                ecoFriendlyFeatures.map((item, idx) => <li className="font-bold" key={idx}><span className="text-Tertiary">{item}</span></li>)
+                            }
+                        </p>
                         {/* <div className="card-actions justify-end">
                             <button className="btn btn-primary">Buy Now</button>
                         </div> */}
