@@ -13,7 +13,7 @@ const ForgotPassword = () => {
             .then(window.open('https://mail.google.com/', '_blank'))
     }
     return (
-        <div className='md:flex w-4/5 mx-auto my-6 md:p-8'>
+        <div className='md:flex w-4/5 mx-auto my-6 md:p-8 2xl:min-h-[650px]'>
             <div className='hidden lg:flex lg:w-1/2 p-6 bg-optional/20 justify-center'>
                 <img src={forgotImg} alt="" />
             </div>
