@@ -13,7 +13,6 @@ const Newsletter = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = e.target.email.value
-        // console.log(email);
         toast.success(`Welcome to newsletter, ${email.split('@')[0]}`); 
     }
 

@@ -3,7 +3,6 @@ import AdventureCard from "./AdventureCard";
 
 // eslint-disable-next-line react/prop-types
 const Adventures = ({data}) => {
-    // console.log(data);
     return (
         <div className="my-6 ">
             <div className="w-11/12 mx-auto space-y-3 text-center">

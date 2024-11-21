@@ -15,7 +15,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [error, setError] = useState({});
-    console.log(location)
+
 
     const handleSocialLogin = () => {
         handleGoogleLogin()
@@ -30,8 +30,6 @@ const Login = () => {
         const email = form.get('email');
         const password = form.get('password')
         setError('')
-        // setEmail(email);
-        console.log('email:', email, 'password:', password);
         handleLogin(email, password)
             .then(res => {
                 const user = res.user;
@@ -39,7 +37,6 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/')
             })
             .catch((err) => {
-                console.log(err);
                 setError({ ...error, login: err.code })
             })
     }

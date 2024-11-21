@@ -11,7 +11,6 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [email, setEmail] = useState('');
-    console.log(user,email);
 
     const googleProvider = new GoogleAuthProvider();
     const handleGoogleLogin = () => {
@@ -59,7 +58,6 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             setLoading(false)
-            console.log(currentUser);
         })
 
         return () => {

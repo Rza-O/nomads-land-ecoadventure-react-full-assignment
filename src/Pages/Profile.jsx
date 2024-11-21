@@ -12,7 +12,6 @@ const Profile = () => {
     }, []);
     const {user} = useContext(AuthContext);
     const { displayName, email, photoURL } = user
-    console.log(displayName, email, photoURL);
     return (
         <div className="2xl:h-[700px] 3xl my-7 flex flex-col justify-center items-center gap-5" data-aos="zoom-in">
             <h1 className="text-2xl md:text-4xl text-center">Welcome <span className="text-Tertiary">{displayName}</span>!</h1>

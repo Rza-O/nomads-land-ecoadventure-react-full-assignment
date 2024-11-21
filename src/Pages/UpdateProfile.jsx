@@ -18,7 +18,6 @@ const UpdateProfile = () => {
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.image.value;
-        console.log(name, photo);
 
         updateUserProfile({ displayName: name, photoURL: photo })
             .then(() => {

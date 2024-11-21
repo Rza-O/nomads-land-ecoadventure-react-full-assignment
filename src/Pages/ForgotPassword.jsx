@@ -5,11 +5,10 @@ import { AuthContext } from '../Context/AuthProvider';
 
 const ForgotPassword = () => {
     const { email, resetPassword } = useContext(AuthContext);
-    console.log(email);
+
     const handleReset = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
-        console.log(email);
         resetPassword(email)
             .then(window.open('https://mail.google.com/', '_blank'))
     }

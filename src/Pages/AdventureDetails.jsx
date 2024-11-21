@@ -18,10 +18,8 @@ const AdventureDetails = () => {
     
     const expertBtnHandler = () => {
         const currentTime = new Date();
-        console.log(currentTime);
         const start = parseISO(`${format(new Date(), 'yyyy-MM-dd')}T10:00:00`);
         const end = parseISO(`${format(new Date(), 'yyyy-MM-dd')}T20:00:00`);
-        console.log(start, end);
         if(isWithinInterval(currentTime, {start, end})){
             window.open('https://meet.google.com', '_blank');
         }

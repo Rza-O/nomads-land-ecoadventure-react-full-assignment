@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const AdventureCard = ({singleData}) => {
     // eslint-disable-next-line react/prop-types
     const { title, image, ecoFriendlyFeatures, id } = singleData;
-    console.log(singleData);
     return (
         <div className="card bg-base-100 shadow-xl rounded-lg">
             <figure>
