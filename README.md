@@ -43,7 +43,8 @@ Nomad's Land is an eco-adventure blog website dedicated to promoting sustainable
 This thoughtfully designed application combines functionality with user experience to create a seamless and interactive eco-adventure platform.
 ## Live Website Link
 - https://nomads-land.surge.sh/
-### Framework and NPM Packages 📦  
+
+## Framework and NPM Packages 📦  
 
 This project leverages the following frameworks and npm packages to enhance functionality and user experience:  
 
